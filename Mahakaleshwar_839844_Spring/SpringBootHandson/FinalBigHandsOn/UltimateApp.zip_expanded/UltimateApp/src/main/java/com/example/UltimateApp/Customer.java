@@ -1,7 +1,5 @@
 package com.example.UltimateApp;
 
-import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,24 +8,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "customer_table")
 public class Customer {
 	@Id
-	@Column(name = "customer_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "customerId")
 	private int customerId;
 	private String name;
-	private LocalDate dob;
+	private int salary;
 
 	public Customer() {
 		super();
 	}
 
-	public Customer(int customerId, String name, LocalDate dob) {
+	public Customer(int customerId, String name, int salary) {
 		super();
 		this.customerId = customerId;
 		this.name = name;
-		this.dob = dob;
+		this.salary = salary;
 	}
 
 	public int getCustomerId() {
@@ -46,12 +44,14 @@ public class Customer {
 		this.name = name;
 	}
 
-	public LocalDate getDob() {
-		return dob;
+	public int getSalary() {
+		return salary;
 	}
 
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
+
+	
 
 }

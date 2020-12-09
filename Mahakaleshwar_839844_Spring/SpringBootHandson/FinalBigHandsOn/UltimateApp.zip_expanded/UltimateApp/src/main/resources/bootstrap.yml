@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ultimateApp
+    name: jpaconfig
     
   cloud:    config:      uri: http://localhost:8080/
 
